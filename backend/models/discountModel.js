@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const discountSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product",
   },
   discountPercentage: {
     type: String,
+    required: true,
+  },
+  discountPrice: {
+    type: Number,
     required: true,
   },
   active: {
